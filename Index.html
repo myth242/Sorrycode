@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Asthmatic Good</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-wrap: wrap;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card {
+      width: 200px;
+      height: 250px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .card.flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      font-size: 1.1em;
+      padding: 15px;
+      color: white;
+    }
+
+    .card-front {
+      background: linear-gradient(135deg, #84fab0, #8fd3f4);
+    }
+
+    .card-back {
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      transform: rotateY(180deg);
+    }
+
+    .card:nth-child(2) .card-front {
+      background: linear-gradient(135deg, #f6d365, #fda085);
+    }
+
+    .card:nth-child(2) .card-back {
+      background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    }
+
+    .card:nth-child(3) .card-front {
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    }
+
+    .card:nth-child(3) .card-back {
+      background: linear-gradient(135deg, #f093fb, #f5576c);
+    }
+
+    .card:nth-child(4) .card-front {
+      background: linear-gradient(135deg, #fddb92, #d1fdff);
+    }
+
+    .card:nth-child(4) .card-back {
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    }
+
+    .moving-top-message {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 1.1em;
+      color: #333;
+      animation: scrollUp 10s linear infinite;
+    }
+
+    @keyframes scrollUp {
+      0% { top: 100%; }
+      100% { top: -40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="moving-top-message">
+    I’m really sorry if I made you feel that way. That was never my intention, and I understand that how it came across matters more than what I meant. I truly didn’t mean to hurt you.
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">Over that insta story</div>
+      <div class="card-back">i know I already said sorry, but I just want to say it again—I shouldn’t have said that thing about you talking to too many men. It wasn’t right, and I didn’t mean to hurt you. Hope we’re okay.</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">flow flow mai i said insestive comment</div>
+      <div class="card-back">I’m really sorry I made you feel that way — it wasn’t my intention at all. I’ll be more mindful moving forward</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">You do judge me</div>
+      <div class="card-back">i don’t judge you at all. If anything I said made you feel that way, I’m really sorry — that was never my intention.</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">you do have a opinion about you</div>
+      <div class="card-back">The only opinion I have about you is that you’re the perfect mix of beauty, cuteness, confidence, and fiery individuality—someone who knows how to stand her ground and turn every moment into a bold statement.</div>
+    </div>
+  </div>
+
+  <script>
+    function flipCard(card) {
+      card.classList.toggle('flipped');
+    }
+  </script>
+
+</body>
+</html>
